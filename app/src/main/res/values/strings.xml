@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_name">Bus Tracker</string>
-    <string name="title_activity_my_navigation">Bus Tracker</string>
+    <string name="app_name">RTPS Bus Tracker</string>
+    <string name="title_activity_my_navigation">RTPS Bus Tracker</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>

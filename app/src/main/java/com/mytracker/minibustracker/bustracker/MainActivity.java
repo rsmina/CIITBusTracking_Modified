@@ -41,17 +41,17 @@ public class MainActivity extends AppCompatActivity {
             setContentView(R.layout.activity_main);
             setContentView(R.layout.activity_main);
             toolbar = (Toolbar)findViewById(R.id.myToolbar);
-            toolbar.setTitle("CIIT Bus Tracker");
+            toolbar.setTitle("RTPS Bus Tracker");
             setSupportActionBar(toolbar);
-            interstitialAd = new InterstitialAd(this);
-            interstitialAd.setAdUnitId(getResources().getString(R.string.interstitial));
-            interstitialAd.loadAd(new AdRequest.Builder().build());
+//            interstitialAd = new InterstitialAd(this);
+//            interstitialAd.setAdUnitId(getResources().getString(R.string.interstitial));
+//            interstitialAd.loadAd(new AdRequest.Builder().build());
             FirebaseDatabase.getInstance().goOnline();
 
 
-            adView = (AdView)findViewById(R.id.adView);
-            AdRequest adRequest = new AdRequest.Builder().build();
-            adView.loadAd(adRequest);
+//            adView = (AdView)findViewById(R.id.adView);
+//            AdRequest adRequest = new AdRequest.Builder().build();
+//            adView.loadAd(adRequest);
         }
         else
         {
@@ -67,50 +67,52 @@ public class MainActivity extends AppCompatActivity {
 
     public void registerAsUser(View v)
     {
-        if(interstitialAd.isLoaded())
-        {
-            interstitialAd.show();
-            interstitialAd.setAdListener(new AdListener()
-            {
-                @Override
-                public void onAdClosed() {
-                    super.onAdClosed();
-                    Intent myIntent = new Intent(getApplicationContext(),UserRegistrationActivity.class);
-                    startActivity(myIntent);
-                }
-            });
-
-        }
-        else
+//        if(interstitialAd.isLoaded())
+//        {
+//            interstitialAd.show();
+//            interstitialAd.setAdListener(new AdListener()
+//            {
+//                @Override
+//                public void onAdClosed() {
+//                    super.onAdClosed();
+//                    Intent myIntent = new Intent(getApplicationContext(),UserRegistrationActivity.class);
+//                    startActivity(myIntent);
+//                }
+//            });
+//
+//        }
+//        else
         {
             Intent myIntent = new Intent(getApplicationContext(),UserRegistrationActivity.class);
             startActivity(myIntent);
-            interstitialAd.loadAd(new AdRequest.Builder().build());
+//            interstitialAd.loadAd(new AdRequest.Builder().build());
         }
 
     }
 
     public void registerAsDriver(View v)
     {
-        if(interstitialAd.isLoaded())
-        {
-            interstitialAd.show();
-            interstitialAd.setAdListener(new AdListener()
-            {
-                @Override
-                public void onAdClosed() {
-                    super.onAdClosed();
-                    Intent myIntent = new Intent(getApplicationContext(),DriverRegistrationActivity.class);
-                    startActivity(myIntent);
-                }
-            });
+//        if(interstitialAd.isLoaded())
+//        {
+//            interstitialAd.show();
+//            interstitialAd.setAdListener(new AdListener()
+//            {
+//                @Override
+//                public void onAdClosed() {
+//                    super.onAdClosed();
+//                    Intent myIntent = new Intent(getApplicationContext(),DriverRegistrationActivity.class);
+//                    startActivity(myIntent);
+//                }
+//            });
+//
+//        }
+//        else
 
-        }
-        else
+         //Ads
         {
             Intent myIntent = new Intent(getApplicationContext(),DriverRegistrationActivity.class);
             startActivity(myIntent);
-            interstitialAd.loadAd(new AdRequest.Builder().build());
+//            interstitialAd.loadAd(new AdRequest.Builder().build());
         }
     }
 

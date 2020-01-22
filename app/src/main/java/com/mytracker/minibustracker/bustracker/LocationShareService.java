@@ -47,10 +47,6 @@ public class LocationShareService extends Service implements LocationListener, G
 
 
         throw new UnsupportedOperationException("Not yet implemented");
-
-
-
-
     }
 
     @Override

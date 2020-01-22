@@ -22,7 +22,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class UserRegistrationActivity extends AppCompatActivity {
 
     Toolbar toolbar;
-    EditText e1,e2,e3;
+    EditText e1,e2,e3, e4;
     FirebaseAuth auth;
     ProgressDialog dialog;
     @Override
@@ -35,6 +35,7 @@ public class UserRegistrationActivity extends AppCompatActivity {
         e1 = (EditText)findViewById(R.id.editText);
         e2 = (EditText)findViewById(R.id.editText2);
         e3 = (EditText)findViewById(R.id.editText3);
+        e4 = (EditText)findViewById(R.id.editText4);
         auth = FirebaseAuth.getInstance();
         FirebaseDatabase.getInstance().goOnline();
         dialog = new ProgressDialog(this);
@@ -49,10 +50,15 @@ public class UserRegistrationActivity extends AppCompatActivity {
         final String name = e1.getText().toString();
         final String email = e2.getText().toString();
         final String password = e3.getText().toString();
-
+        final String confirmPass = e4.getText().toString();
         if(name.equals("") &&  email.equals("") &&  password.equals(""))
         {
             Toast.makeText(getApplicationContext(),"Please enter correct details",Toast.LENGTH_SHORT).show();
+        }
+
+        else if ( !(password.equals(confirmPass))) {
+            Toast.makeText(getApplicationContext(), "Passwords are not matching!", Toast.LENGTH_SHORT).show();
+            dialog.dismiss();
         }
         else
         {

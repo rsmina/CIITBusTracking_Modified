@@ -61,14 +61,14 @@
                 android:id="@+id/button2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:background="#E8C020"
                 android:onClick="registerAsUser"
+                android:padding="10dp"
                 android:text="Register as User"
                 android:textColor="#ffffff"
-                android:textStyle="bold"
                 android:textSize="20sp"
-                android:padding="10dp"
-                android:layout_marginTop="7dp"
-                android:background="#1bde59" />
+                android:textStyle="bold" />
             <TextView
                 android:id="@+id/textView"
                 android:layout_width="match_parent"
@@ -88,15 +88,6 @@
     android:layout_width="match_parent"
     android:layout_height="0dp"
     android:layout_weight="2">
-
-    <com.google.android.gms.ads.AdView
-        xmlns:ads="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/adView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        ads:adSize="SMART_BANNER"
-        ads:adUnitId="@string/banner_ad">
-    </com.google.android.gms.ads.AdView>
 
 
 </LinearLayout>

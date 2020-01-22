@@ -16,13 +16,13 @@
         ></android.support.v7.widget.Toolbar>
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="10dp"
-        android:id="@+id/linearLayout"
+        android:layout_alignParentStart="true"
         android:layout_centerVertical="true"
-        android:layout_alignParentStart="true">
+        android:orientation="vertical"
+        android:padding="10dp">
 
         <ImageView
             android:id="@+id/imageView2"
@@ -32,31 +32,32 @@
             android:src="@drawable/rsz_bus" />
 
         <EditText
+            android:id="@+id/editText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:textColor="#ffffff"
-            android:textStyle="bold"
-            android:textColorHint="#ffffff"
             android:background="#5d5d5d"
-            android:padding="10dp"
             android:hint="NAME"
-            android:textSize="20sp"
             android:inputType="text"
-            android:id="@+id/editText" />
+            android:padding="10dp"
+            android:textColor="#ffffff"
+            android:textColorHint="#ffffff"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
         <EditText
+            android:id="@+id/editText2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
+            android:layout_marginTop="5dp"
+            android:background="#5d5d5d"
             android:hint="EMAIL"
+            android:inputType="textEmailAddress"
+            android:padding="10dp"
             android:textColor="#ffffff"
             android:textColorHint="#ffffff"
-            android:textStyle="bold"
-            android:background="#5d5d5d"
-            android:padding="10dp"
-            android:inputType="textEmailAddress"
-            android:layout_marginTop="5dp"
-            android:id="@+id/editText2" />
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/editText3"
@@ -79,7 +80,21 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:background="#5d5d5d"
-            android:hint="BUS NUMBER"
+            android:hint="CONFIRM PASSWORD"
+            android:inputType="textPassword"
+            android:padding="10dp"
+            android:textColor="#ffffff"
+            android:textColorHint="#ffffff"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/editText5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="#5d5d5d"
+            android:hint="DRIVER KEY"
             android:inputType="text"
             android:padding="10dp"
             android:textColor="#ffffff"
@@ -89,17 +104,17 @@
 
 
         <Button
+            android:id="@+id/btnlogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="#ffffff"
-            android:textStyle="bold"
-            android:textSize="20sp"
-            android:padding="10dp"
             android:layout_marginTop="10dp"
-            android:id="@+id/btnlogin"
-            android:text="REGISTER"
+            android:background="#1bde59"
             android:onClick="registerDriver"
-            android:background="#1bde59" />
+            android:padding="10dp"
+            android:text="REGISTER"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:textStyle="bold" />
     </LinearLayout>
 
 </RelativeLayout>

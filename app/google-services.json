@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "457005129138",
+    "firebase_url": "https://rtps-91294.firebaseio.com",
+    "project_id": "rtps-91294",
+    "storage_bucket": "rtps-91294.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:457005129138:android:d917d3e274f054e8",
+        "android_client_info": {
+          "package_name": "com.mytracker.minibustracker.bustracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "457005129138-0qsb5d8uuu94jlskotcam1ivjl3srjo3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mytracker.minibustracker.bustracker",
+            "certificate_hash": "d8e366f7a1096bcdf18c0c9ceeeaef627a12ccb1"
+          }
+        },
+        {
+          "client_id": "457005129138-0rh8tij33mhq7rf308pc0jqiu5qio89q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCd9dY_nFOCU6F3TTGzTvgTJ4kRRJ3tIME"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "457005129138-0rh8tij33mhq7rf308pc0jqiu5qio89q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -18,9 +18,9 @@ AdView adView;
         toolbar = (Toolbar)findViewById(R.id.driverToolbar);
         toolbar.setTitle("Bus Schedule");
         setSupportActionBar(toolbar);
-        adView = (AdView)findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        adView.loadAd(adRequest);
+//        adView = (AdView)findViewById(R.id.adView);
+//        AdRequest adRequest = new AdRequest.Builder().build();
+//        adView.loadAd(adRequest);
 
 
     }

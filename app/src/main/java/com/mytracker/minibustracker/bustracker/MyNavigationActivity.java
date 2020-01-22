@@ -81,9 +81,9 @@ public class MyNavigationActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         auth = FirebaseAuth.getInstance();
-    interstitialAd = new InterstitialAd(this);
-        interstitialAd.setAdUnitId(getResources().getString(R.string.interstitial));
-        interstitialAd.loadAd(new AdRequest.Builder().build());
+//    interstitialAd = new InterstitialAd(this);
+//        interstitialAd.setAdUnitId(getResources().getString(R.string.interstitial));
+//        interstitialAd.loadAd(new AdRequest.Builder().build());
 
 //        FirebaseDatabase.getInstance().setPersistenceEnabled(true);
 
@@ -102,9 +102,9 @@ public class MyNavigationActivity extends AppCompatActivity
         textEmail = (TextView) header.findViewById(R.id.email_text);
 
 
-        adView = (AdView)findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        adView.loadAd(adRequest);
+//        adView = (AdView)findViewById(R.id.adView);
+//        AdRequest adRequest = new AdRequest.Builder().build();
+//        adView.loadAd(adRequest);
 
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
@@ -246,10 +246,10 @@ public class MyNavigationActivity extends AppCompatActivity
         });
 
 
-        if(interstitialAd.isLoaded())
-        {
-            interstitialAd.show();
-        }
+//        if(interstitialAd.isLoaded())
+//        {
+//            interstitialAd.show();
+//        }
     }
 
 
@@ -288,7 +288,7 @@ public class MyNavigationActivity extends AppCompatActivity
         sb.append("https://maps.googleapis.com/maps/api/directions/json?");
         sb.append("origin=" + marker_Pos.latitude + "," + marker_Pos.longitude);
         sb.append("&destination=" + latLngCurrentuserLocation.latitude + "," + latLngCurrentuserLocation.longitude);
-        sb.append("&key=" + "PUT YOUR KEY HERE (DIRECTIONS)");
+        sb.append("&key=" + "AIzaSyAg4tHk0urpBY0S2fNvYoqxHUHs3pSsIg4");
 
 
 
@@ -394,26 +394,26 @@ public class MyNavigationActivity extends AppCompatActivity
             }
             else if(driver_profile)
             {
-                interstitialAd.loadAd(new AdRequest.Builder().build());
-                if(interstitialAd.isLoaded())
-                {
-                    interstitialAd.show();
-                    interstitialAd.setAdListener(new AdListener()
-                    {
-                        @Override
-                        public void onAdClosed() {
-                            super.onAdClosed();
-                            Intent myIntent = new Intent(MyNavigationActivity.this,LocationShareService.class);
-                            startService(myIntent);
-                            interstitialAd.loadAd(new AdRequest.Builder().build());
-                        }
-                    });
-                }
-                else
+//                interstitialAd.loadAd(new AdRequest.Builder().build());
+//                if(interstitialAd.isLoaded())
+//                {
+//                    interstitialAd.show();
+//                    interstitialAd.setAdListener(new AdListener()
+//                    {
+//                        @Override
+//                        public void onAdClosed() {
+//                            super.onAdClosed();
+//                            Intent myIntent = new Intent(MyNavigationActivity.this,LocationShareService.class);
+//                            startService(myIntent);
+//                            interstitialAd.loadAd(new AdRequest.Builder().build());
+//                        }
+//                    });
+//                }
+//                else
                 {
                     Intent myIntent = new Intent(MyNavigationActivity.this,LocationShareService.class);
                     startService(myIntent);
-                    interstitialAd.loadAd(new AdRequest.Builder().build());
+//                    interstitialAd.loadAd(new AdRequest.Builder().build());
                 }
 
             }
@@ -431,26 +431,26 @@ public class MyNavigationActivity extends AppCompatActivity
         }
         else if(id == R.id.nav_schedule)
         {
-            if(interstitialAd.isLoaded())
-            {
-                interstitialAd.show();
-                interstitialAd.setAdListener(new AdListener()
-                {
-                    @Override
-                    public void onAdClosed() {
-                        super.onAdClosed();
-                        Intent m = new Intent(MyNavigationActivity.this,ScheduleActivity.class);
-                        startActivity(m);
-                        interstitialAd.loadAd(new AdRequest.Builder().build());
-                    }
-                });
-
-            }
-            else
+//            if(interstitialAd.isLoaded())
+//            {
+//                interstitialAd.show();
+//                interstitialAd.setAdListener(new AdListener()
+//                {
+//                    @Override
+//                    public void onAdClosed() {
+//                        super.onAdClosed();
+//                        Intent m = new Intent(MyNavigationActivity.this,ScheduleActivity.class);
+//                        startActivity(m);
+//                        interstitialAd.loadAd(new AdRequest.Builder().build());
+//                    }
+//                });
+//
+//            }
+//            else
             {
                 Intent m = new Intent(MyNavigationActivity.this,ScheduleActivity.class);
                 startActivity(m);
-                interstitialAd.loadAd(new AdRequest.Builder().build());
+//                interstitialAd.loadAd(new AdRequest.Builder().build());
             }
 
         }

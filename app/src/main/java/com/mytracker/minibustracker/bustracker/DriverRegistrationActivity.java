@@ -22,7 +22,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class DriverRegistrationActivity extends AppCompatActivity {
 
     Toolbar toolbar;
-    EditText e1,e2,e3,e4;
+    EditText e1,e2,e3,e4, e5;
     FirebaseAuth auth;
     ProgressDialog dialog;
     FirebaseUser user;
@@ -39,6 +39,7 @@ public class DriverRegistrationActivity extends AppCompatActivity {
         e2 = (EditText)findViewById(R.id.editText2);
         e3 = (EditText)findViewById(R.id.editText3);
         e4 = (EditText)findViewById(R.id.editText4);
+        e5 = (EditText)findViewById(R.id.editText5);
         auth = FirebaseAuth.getInstance();
         dialog = new ProgressDialog(this);
     }
@@ -51,33 +52,45 @@ public class DriverRegistrationActivity extends AppCompatActivity {
         final String name = e1.getText().toString();
         final String email = e2.getText().toString();
         final String password = e3.getText().toString();
+        final String confirmPass= e4.getText().toString();
+        final String driverKey = e5.getText().toString();
 
 
-        if (name.equals("") && email.equals("") && password.equals("") ) {
-            Toast.makeText(getApplicationContext(), "Please enter correct details", Toast.LENGTH_SHORT).show();
-            dialog.dismiss();
-        } else {
-            auth.fetchProvidersForEmail(email)
-                    .addOnCompleteListener(new OnCompleteListener<ProviderQueryResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<ProviderQueryResult> task) {
+        if(driverKey.equals("APC1991")) {
+            if (name.equals("") && email.equals("") && password.equals("")) {
+                Toast.makeText(getApplicationContext(), "Please enter correct details", Toast.LENGTH_SHORT).show();
+                dialog.dismiss();
+            }
+            else if ( !(password.equals(confirmPass))) {
+                Toast.makeText(getApplicationContext(), "Passwords are not matching!", Toast.LENGTH_SHORT).show();
+                dialog.dismiss();
+            }
+            else {
+                auth.fetchProvidersForEmail(email)
+                        .addOnCompleteListener(new OnCompleteListener<ProviderQueryResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<ProviderQueryResult> task) {
 
-                            if (task.isSuccessful()) {
-                                boolean check = !task.getResult().getProviders().isEmpty();
-                                if (!check) {
-                                    doAllStuff();
-                                }
-
-                                else {
-                                    dialog.dismiss();
-                                    Toast.makeText(getApplicationContext(), "Account already exists.", Toast.LENGTH_SHORT).show();
+                                if (task.isSuccessful()) {
+                                    boolean check = !task.getResult().getProviders().isEmpty();
+                                    if (!check) {
+                                        doAllStuff();
+                                    } else {
+                                        dialog.dismiss();
+                                        Toast.makeText(getApplicationContext(), "Account already exists.", Toast.LENGTH_SHORT).show();
+                                    }
                                 }
                             }
-                        }
 
-                    });
+                        });
+            }
+
         }
 
+        else{
+            Toast.makeText(getApplicationContext(), "Incorrect Driver Key!", Toast.LENGTH_SHORT).show();
+            dialog.dismiss();
+        }
 
     }
 

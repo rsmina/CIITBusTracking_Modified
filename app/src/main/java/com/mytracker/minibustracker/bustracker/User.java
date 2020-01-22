@@ -1,8 +1,6 @@
 package com.mytracker.minibustracker.bustracker;
 
-/**
- * Created by haroonpc on 3/12/2018.
- */
+
 
 public class User
 {
